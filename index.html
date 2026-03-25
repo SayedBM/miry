@@ -1,0 +1,441 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Schneiderei Miry Basel | Meisteratelier</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Montserrat:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+
+    <style>
+      /* --- Styles additionnels pour le système de statut --- */
+      .vacation-banner {
+        background-color: #d35400;
+        color: white;
+        text-align: center;
+        padding: 12px 20px;
+        font-family: "Montserrat", sans-serif;
+        font-size: 0.95rem;
+        font-weight: 500;
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 2000;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      body.has-banner #main-header {
+        top: 48px; /* Anpassung je nach Banner-Höhe */
+      }
+
+      .status-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 8px 16px;
+        border-radius: 30px;
+        background: rgba(255, 255, 255, 0.9);
+        backdrop-filter: blur(8px);
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      .status-badge .dot {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        display: inline-block;
+      }
+
+      .status-badge.open .dot {
+        background-color: #27ae60;
+        box-shadow: 0 0 10px #27ae60;
+        animation: pulse 2s infinite;
+      }
+
+      .status-badge.closed-now .dot {
+        background-color: #e74c3c;
+      }
+
+      @keyframes pulse {
+        0% {
+          transform: scale(1);
+          opacity: 1;
+        }
+        50% {
+          transform: scale(1.3);
+          opacity: 0.75;
+        }
+        100% {
+          transform: scale(1);
+          opacity: 1;
+        }
+      }
+    </style>
+  </head>
+
+  <body class="lang-de-active">
+    <!-- Vacation Banner -->
+    <div id="status-banner" class="vacation-banner" style="display: none"></div>
+
+    <!-- HEADER -->
+    <header id="main-header">
+      <div class="container header-content">
+        <div class="logo">
+          <a href="#"><img src="logo.jpg" alt="Schneiderei Miry Logo" /></a>
+        </div>
+        <nav>
+          <ul id="nav-menu">
+            <li>
+              <a href="#about" class="nav-de">Über Uns</a
+              ><a href="#about" class="nav-en">About Us</a>
+            </li>
+            <li>
+              <a href="#services" class="nav-de">Leistungen</a
+              ><a href="#services" class="nav-en">Services</a>
+            </li>
+            <li>
+              <a href="#contact" class="nav-de">Kontakt</a
+              ><a href="#contact" class="nav-en">Contact</a>
+            </li>
+            <li class="lang-switch">
+              <button onclick="toggleLang()" id="langBtn">EN</button>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <!-- HERO -->
+      <section id="hero">
+        <div class="container">
+          <div class="hero-logo">
+            <img src="logo.jpg" alt="Schneiderei Miry Basel Logo" />
+          </div>
+
+          <!-- Status Badge -->
+          <div id="status-indicator" class="status-badge">
+            <span class="dot"></span>
+            <span class="content-de" id="status-text-de">Lädt...</span>
+            <span class="content-en" id="status-text-en">Loading...</span>
+          </div>
+
+          <div class="content-de">
+            <h1>Traditionelles Handwerk.<br />Zeitlose Eleganz.</h1>
+            <p class="subtitle">
+              Ihr Meisteratelier für anspruchsvolle Änderungen und Maßarbeit in
+              Basel.
+            </p>
+          </div>
+          <div class="content-en">
+            <h1>Traditional Craft.<br />Timeless Elegance.</h1>
+            <p class="subtitle">
+              Your master atelier for sophisticated alterations and bespoke
+              tailoring in Basel.
+            </p>
+          </div>
+
+          <a href="#contact" class="btn-vintage">
+            <span class="nav-de">Kontakt Aufnehmen</span>
+            <span class="nav-en">Get in Touch</span>
+          </a>
+        </div>
+      </section>
+
+      <!-- ABOUT -->
+      <section id="about">
+        <div class="container">
+          <div class="vintage-box">
+            <div class="content-de">
+              <h2>Perfektion in jedem Detail</h2>
+              <p>
+                In unserem Atelier im Herzen von Basel verbinden wir
+                jahrzehntelange Erfahrung mit einem feinen Gespür für moderne
+                Schnitte. Wir glauben, dass Kleidung mehr ist als nur Stoff –
+                sie ist Ausdruck Ihrer Persönlichkeit.
+              </p>
+              <p>
+                Ob hochwertige Änderungen, die Bearbeitung von feinstem Leder
+                oder die Anpassung von Festtagsgarderobe: Wir garantieren
+                Präzision bis zum letzten Stich.
+              </p>
+            </div>
+            <div class="content-en">
+              <h2>Perfection in Every Detail</h2>
+              <p>
+                In our atelier in the heart of Basel, we combine decades of
+                experience with a keen sense for modern cuts. We believe that
+                clothing is more than just fabric – it is an expression of your
+                personality.
+              </p>
+              <p>
+                Whether it's high-quality alterations, working with the finest
+                leather, or tailoring formal wear: we guarantee precision down
+                to the last stitch.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SERVICES -->
+      <section id="services">
+        <div class="container">
+          <h2 class="nav-de">Unsere Expertise</h2>
+          <h2 class="nav-en">Our Expertise</h2>
+
+          <div class="services-grid">
+            <article class="service-card">
+              <h3>
+                <span class="nav-de">Änderungen</span
+                ><span class="nav-en">Alterations</span>
+              </h3>
+              <p class="nav-de">
+                Perfekte Passform für Hosen, Sakkos, Kleider und mehr. Wir
+                bringen Ihre Lieblingsstücke wieder in Form.
+              </p>
+              <p class="nav-en">
+                Perfect fit for trousers, blazers, dresses, and more. We bring
+                your favorite pieces back into shape.
+              </p>
+            </article>
+            <article class="service-card">
+              <h3>
+                <span class="nav-de">Leder & Pelz</span
+                ><span class="nav-en">Leather & Fur</span>
+              </h3>
+              <p class="nav-de">
+                Spezialisierte Bearbeitung von Lederbekleidung. Kürzen,
+                Reparieren und professionelle Anpassung.
+              </p>
+              <p class="nav-en">
+                Specialized handling of leather garments. Shortening, repairs,
+                and professional fitting.
+              </p>
+            </article>
+            <article class="service-card">
+              <h3>
+                <span class="nav-de">Premium Service</span
+                ><span class="nav-en">Premium Service</span>
+              </h3>
+              <p class="nav-de">
+                Exklusive Anpassungen für Hochzeitskleider, Anzüge und
+                hochwertige Abendgarderobe.
+              </p>
+              <p class="nav-en">
+                Exclusive alterations for wedding dresses, suits, and high-end
+                evening wear.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTACT -->
+      <section id="contact">
+        <div class="container">
+          <div class="contact-grid">
+            <div class="contact-info">
+              <h2 class="nav-de">Besuchen Sie Uns</h2>
+              <h2 class="nav-en">Visit Us</h2>
+
+              <div class="contact-details">
+                <p class="address">
+                  <strong>Schneiderei Miry</strong><br />
+                  Spalenring 12, 4055 Basel
+                </p>
+                <p class="phone">
+                  <span class="nav-de">Telefon:</span>
+                  <span class="nav-en">Phone:</span>
+                  <a href="tel:+41000000000">+41 (0) XX XXX XX XX</a>
+                </p>
+              </div>
+
+              <div class="opening-hours">
+                <h4 class="nav-de">Öffnungszeiten</h4>
+                <h4 class="nav-en">Opening Hours</h4>
+                <table class="hours-table">
+                  <tr id="day-1">
+                    <td class="nav-de">Montag</td>
+                    <td class="nav-en">Monday</td>
+                    <td>08:00 - 18:30</td>
+                  </tr>
+                  <tr id="day-2">
+                    <td class="nav-de">Dienstag</td>
+                    <td class="nav-en">Tuesday</td>
+                    <td>08:00 - 18:30</td>
+                  </tr>
+                  <tr id="day-3">
+                    <td class="nav-de">Mittwoch</td>
+                    <td class="nav-en">Wednesday</td>
+                    <td>08:00 - 18:30</td>
+                  </tr>
+                  <tr id="day-4">
+                    <td class="nav-de">Donnerstag</td>
+                    <td class="nav-en">Thursday</td>
+                    <td>08:00 - 18:30</td>
+                  </tr>
+                  <tr id="day-5">
+                    <td class="nav-de">Freitag</td>
+                    <td class="nav-en">Friday</td>
+                    <td>08:00 - 18:30</td>
+                  </tr>
+                  <tr id="day-6">
+                    <td class="nav-de">Samstag</td>
+                    <td class="nav-en">Saturday</td>
+                    <td>08:00 - 17:00</td>
+                  </tr>
+                  <tr id="day-0">
+                    <td class="nav-de">Sonntag</td>
+                    <td class="nav-en">Sunday</td>
+                    <td class="closed">
+                      <span class="nav-de">Geschlossen</span
+                      ><span class="nav-en">Closed</span>
+                    </td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+
+            <div class="map-box">
+              <div class="map-overlay">
+                <h3>Schneiderei Miry</h3>
+                <p>Spalenring 12<br />4055 Basel</p>
+                <a
+                  href="https://maps.google.com/?q=Spalenring+12+4055+Basel"
+                  target="_blank"
+                  class="map-link"
+                >
+                  <span class="nav-de">In Google Maps öffnen</span>
+                  <span class="nav-en">Open in Google Maps</span>
+                </a>
+              </div>
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2692.6!2d7.57!3d47.55!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4791b8!2sBasel!5e0!3m2!1sde!2sch!4v1600000000000"
+                width="100%"
+                height="100%"
+                style="border: 0"
+                allowfullscreen=""
+                loading="lazy"
+              ></iframe>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container">
+        <p>&copy; 2026 Schneiderei Miry Basel. All Rights Reserved.</p>
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="config-boutique.js"></script>
+    <script>
+      // === LANGUAGE SWITCHER ===
+      function toggleLang() {
+        const body = document.body;
+        const btn = document.getElementById("langBtn");
+
+        if (body.classList.contains("lang-de-active")) {
+          body.classList.replace("lang-de-active", "lang-en-active");
+          btn.textContent = "DE";
+        } else {
+          body.classList.replace("lang-en-active", "lang-de-active");
+          btn.textContent = "EN";
+        }
+        updateStatus(); // Status bei Sprachwechsel aktualisieren
+      }
+
+      // === STATUS & OPENING HOURS ===
+      function updateStatus() {
+        const now = new Date();
+        const day = now.getDay(); // 0=Sonntag, 1=Montag ...
+        const hour = now.getHours();
+        const min = now.getMinutes();
+        const time = hour + min / 60;
+
+        const banner = document.getElementById("status-banner");
+        const indicator = document.getElementById("status-indicator");
+        const textDe = document.getElementById("status-text-de");
+        const textEn = document.getElementById("status-text-en");
+
+        // 1. Vacation mode (aus config-boutique.js)
+        if (
+          typeof boutiqueConfig !== "undefined" &&
+          boutiqueConfig.estEnVacances
+        ) {
+          banner.style.display = "block";
+          banner.textContent = boutiqueConfig.messageVacances;
+          document.body.classList.add("has-banner");
+
+          indicator.classList.add("closed-now");
+          indicator.classList.remove("open");
+          textDe.textContent = "Wegen Ferien geschlossen";
+          textEn.textContent = "Closed for holidays";
+          return;
+        }
+
+        // 2. Normale Öffnungszeiten
+        let isOpen = false;
+        let openingTime = "08:00";
+
+        if (typeof boutiqueConfig !== "undefined" && boutiqueConfig.horaires) {
+          const schedule = boutiqueConfig.horaires[day];
+          if (schedule && schedule.length === 2) {
+            const [openStr, closeStr] = schedule;
+            const [hOuv, mOuv] = openStr.split(":").map(Number);
+            const [hFer, mFer] = closeStr.split(":").map(Number);
+
+            openingTime = openStr;
+            if (time >= hOuv + mOuv / 60 && time < hFer + mFer / 60) {
+              isOpen = true;
+            }
+          }
+        } else {
+          // Fallback, falls config nicht geladen wird
+          if (day >= 1 && day <= 5 && time >= 8 && time < 18.5) isOpen = true;
+          else if (day === 6 && time >= 8 && time < 17) isOpen = true;
+        }
+
+        if (isOpen) {
+          indicator.classList.add("open");
+          indicator.classList.remove("closed-now");
+          textDe.textContent = "Jetzt Geöffnet";
+          textEn.textContent = "Open Now";
+        } else {
+          indicator.classList.add("closed-now");
+          indicator.classList.remove("open");
+          textDe.textContent = "Geschlossen - Öffnet um " + openingTime;
+          textEn.textContent = "Closed - Opens at " + openingTime;
+        }
+
+        // Highlight current day
+        for (let i = 0; i <= 6; i++) {
+          const row = document.getElementById("day-" + i);
+          if (row) row.style.cssText = "";
+        }
+        const todayRow = document.getElementById("day-" + day);
+        if (todayRow) {
+          todayRow.style.fontWeight = "600";
+          todayRow.style.color = "var(--color-accent)";
+          todayRow.style.backgroundColor = "rgba(180, 147, 77, 0.05)";
+        }
+      }
+
+      // Initialize
+      document.addEventListener("DOMContentLoaded", () => {
+        updateStatus();
+        setInterval(updateStatus, 60000); // jede Minute aktualisieren
+      });
+    </script>
+  </body>
+</html>
