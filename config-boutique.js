@@ -1,9 +1,9 @@
 // === CONFIGURATION DE LA BOUTIQUE ===
 const boutiqueConfig = {
   // 1. VACANCES ET FERMETURES
-  estEnVacances: false,
+  estEnVacances: true,
   messageVacances:
-    "L'atelier est fermé pour congés annuels. Réouverture le 15 septembre.",
+    "We are closed today!,
 
   fermetureExceptionnelle: false,
   messageExceptionnel: "this morning we are closed.",
