@@ -1,11 +1,11 @@
 // === CONFIGURATION DE LA BOUTIQUE ===
 const boutiqueConfig = {
   // 1. VACANCES ET FERMETURES
-  estEnVacances: true,
+  estEnVacances: false,
   messageVacances:
     "We are closed today!,
 
-  fermetureExceptionnelle: false,
+  fermetureExceptionnelle: true,
   messageExceptionnel: "this morning we are closed.",
 
   // 2. HORAIRES (Format 24h : [Ouverture, Fermeture])
