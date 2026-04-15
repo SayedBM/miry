@@ -11,11 +11,11 @@ const boutiqueConfig = {
   // 2. HORAIRES (Format 24h : [Ouverture, Fermeture])
   // Note : 0 = Dimanche, 1 = Lundi, etc.
   horaires: {
-    1: ["08:00", "18:30"], // Lundi
-    2: ["08:00", "18:30"], // Mardi
-    3: ["08:00", "18:30"], // Mercredi
-    4: ["08:00", "18:30"], // Jeudi
-    5: ["08:00", "18:30"], // Vendredi
+    1: ["08:00", "19:00"], // Lundi
+    2: ["08:00", "19:00"], // Mardi
+    3: ["08:00", "19:00"], // Mercredi
+    4: ["08:00", "19:00"], // Jeudi
+    5: ["08:00", "19:00"], // Vendredi
     6: ["09:00", "17:00"], // Samedi
     0: null, // Dimanche (null = Fermé)
   },
