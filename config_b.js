@@ -1,9 +1,9 @@
 // === CONFIGURATION DE LA BOUTIQUE (CHARGÉE DEPUIS JSON) ===
 let boutiqueConfig = {
-  estEnVacances: true,
+  estEnVacances: false,
   messageVacances: "on est fermé",
-  fermetureExceptionnelle: false,
-  messageExceptionnel: "",
+  fermetureExceptionnelle: true,
+  messageExceptionnel: "we are enjoing our vocation I hope you so ! we can meet 12 Mai 2026 ",
   horaires: {},
 };
 
