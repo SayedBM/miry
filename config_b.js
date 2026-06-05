@@ -1,4 +1,4 @@
-// === CONFIGURATION DE LA BOUTIQUE (CHARGÉE DEPUIS JSON) ===
+// === CONFIGURATION DE LA BOUTIQUE (CHARGÉE DEPUIS JSON) === versions simple sans authentification
 let boutiqueConfig = {
   estEnVacances: false,
   messageVacances: "on est fermé",
